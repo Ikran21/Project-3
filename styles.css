@@ -1,0 +1,24 @@
+body{
+    background-color: aquamarine;
+    text-align: center;
+}
+
+.button{
+    background-color: gray;
+    border: none;
+    color: aliceblue;
+    padding: 15px 32px;
+    font-size: 16px;
+}
+
+#opt1{
+    background-color: grey;
+    border: none;
+    color: aliceblue;
+    padding: 15px 32px;
+    font-size: 25px;
+}
+
+#h2{
+    font-size: 60px;
+}
