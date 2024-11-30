@@ -5,6 +5,7 @@ let tiles = [];
 let blankTile = { x: 3, y: 3 }; // Initial position of the blank tile
 let moveCount = 0;
 let startTime;
+
 let timerInterval;
 
 document.addEventListener("DOMContentLoaded", () => {
