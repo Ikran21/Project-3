@@ -41,3 +41,18 @@ body {
 .movablepiece {
     border: 2px solid red;
 }
+
+.w3 {
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+    float: right;
+}
+
+.opt1{
+    background-color: grey;
+    border: none;
+    color: aliceblue;
+    padding: 15px 32px;
+    font-size: 25px;
+}
