@@ -84,26 +84,40 @@ function moveTile(tile) {
 
 
 function slideTilesInRow(startX, endX, rowY) {
+    // Check for the direction of the blankTile
     const direction = startX < endX ? 1 : -1;
+    // Loop for however many tiles need to move
     for (let x = startX; x !== endX; x += direction) {
+        // Find the next tile to move
         const t = tiles.find(tile => parseInt(tile.dataset.x) === x && parseInt(tile.dataset.y) === rowY);
+        // Checks if valid tile and prevents the error of undefined
         if (t) {
-        		moveTile(t);
+            // Move tiles over
+        	moveTile(t);
+            // Keeps move count accurate
             moveCount--;
         }
     }
+    // Keeps the slide as 1 move
     moveCount++;
 }
 
 function slideTilesInColumn(startY, endY, colX) {
+    // Check for the direction of the blankTile
     const direction = startY < endY ? 1 : -1;
+    // Loop for however many tiles need to move
     for (let y = startY; y !== endY; y += direction) {
+        // Find the next tile to move
         const t = tiles.find(tile => parseInt(tile.dataset.y) === y && parseInt(tile.dataset.x) === colX);
+        // Checks if valid tile and prevents the error of undefined
         if(t) {
-        		moveTile(t);
+            // Move tiles over
+        	moveTile(t);
+            // Keeps move count accurate
             moveCount--;
         }
     }
+    // Keeps the slide as 1 move
     moveCount++;
 }
 
