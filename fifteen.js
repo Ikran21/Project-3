@@ -210,6 +210,8 @@ function checkWinCondition() {
         clearInterval(timerInterval);
         document.getElementById("puzzle-container").style.border = "7px solid gold";
         document.getElementById("game-won").textContent = `Congratulations! You solved the puzzle in ${moveCount} moves!`;
+        var vSound = document.getElementById("victory-sound");
+        vSound.play();
     }
 }
 
