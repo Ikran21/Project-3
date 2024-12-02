@@ -42,11 +42,32 @@ body {
     border: 2px solid red;
 }
 
-#opt1{
+.w3 {
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+    float: right;
+}
+
+.opt1 {
     background-color: grey;
     border: none;
     color: aliceblue;
     padding: 15px 32px;
     font-size: 25px;
-    
+}
+
+#opt1 {
+    background-color: grey;
+    border: none;
+    color: aliceblue;
+    padding: 15px 32px;
+    font-size: 25px;
+}
+
+#game-won {
+    font-weight: bold;
+    font-size: 24px;
+    color: gold;
+    text-shadow: 2px 2px 5px black;
 }
