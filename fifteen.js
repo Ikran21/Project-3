@@ -8,9 +8,19 @@ let moveCount = 0;
 let startTime;
 let timerInterval;
 
+const backgrounds = [
+    'url("background.jpg")',
+    'url("toad.jpg")',
+    'url("luigi.jpg")',
+    'url("bowser.jpg")'
+];  // Array of different background images
+
+let currentBackground = 0; // Default background index
+
 document.addEventListener("DOMContentLoaded", () => {
     const puzzleContainer = document.getElementById("puzzle-container");
     const shuffleButton = document.getElementById("shuffle-button");
+    const backgroundSelect = document.getElementById("background-select");
 
     initializePuzzle(puzzleContainer);
     resetGameStats();
@@ -18,6 +28,12 @@ document.addEventListener("DOMContentLoaded", () => {
     shuffleButton.addEventListener("click", () => {
         shufflePuzzle();
         resetGameStats();
+    });
+
+    // Event listener to change background
+    backgroundSelect.addEventListener("change", (e) => {
+        currentBackground = parseInt(e.target.value);
+        applyBackground();
     });
 });
 
@@ -32,20 +48,20 @@ function initializePuzzle(container) {
 
             const tile = document.createElement("div");
             tile.classList.add("tile");
-            
+
             // Add number span on top of the background
             const numberSpan = document.createElement("span");
             numberSpan.classList.add("tile-number");
             numberSpan.textContent = i * GRID_SIZE + j + 1;
             tile.appendChild(numberSpan);
-            
+
             // Set the background position for this tile
             tile.style.backgroundPosition = `-${j * TILE_SIZE}px -${i * TILE_SIZE}px`;
-            
+
             // Set initial grid position
             tile.style.gridRow = `${i + 1}`;
             tile.style.gridColumn = `${j + 1}`;
-            
+
             tile.dataset.x = j;
             tile.dataset.y = i;
             tile.dataset.value = i * GRID_SIZE + j + 1;
@@ -58,6 +74,15 @@ function initializePuzzle(container) {
             tiles.push(tile);
         }
     }
+
+    applyBackground();  // Apply the initial background
+}
+
+function applyBackground() {
+    // Set the background image for each tile based on the selected background
+    tiles.forEach(tile => {
+        tile.style.backgroundImage = backgrounds[currentBackground];
+    });
 }
 
 function moveTile(tile) {		

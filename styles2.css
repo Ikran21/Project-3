@@ -57,6 +57,14 @@ body {
     font-size: 25px;
 }
 
+#opt1 {
+    background-color: grey;
+    border: none;
+    color: aliceblue;
+    padding: 15px 32px;
+    font-size: 25px;
+}
+
 #game-won {
     font-weight: bold;
     font-size: 24px;
